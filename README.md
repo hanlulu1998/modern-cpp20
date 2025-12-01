@@ -5,5 +5,6 @@ cpp11~cpp20的一些新特性介绍与学习
 
 1. [新的基础类型](./01new_base_type/main.cpp)
 2. [inline拓展](./02inline_extend/main.cpp)
+3. [auto和decltype](./03auto_decltype)
 
 > 更新中，待续...
