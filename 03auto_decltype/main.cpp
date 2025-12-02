@@ -2,7 +2,7 @@
 #include <cstdio>
 #include <iostream>
 
-struct A{
+struct A {
     double x = 1.0;
     // 4.1)只能使用static inline和static const
     static inline auto AI = 10;
@@ -10,7 +10,7 @@ struct A{
 };
 
 template <decltype(auto) N>
-void f(){    
+void f() {
     std::cout << type_name_v<decltype(N)> << "\n";
 }
 
@@ -93,6 +93,14 @@ int main(void) {
     std::cout << type_name_v<decltype(auto_exp4)> << "\n";
     std::cout << type_name_v<decltype(auto_exp5)> << "\n";
 
+    // 7)c++三元运算符常规类型提升，即使值为2，但是2.0为double
+    // 所以auto依旧为double
+    // 同样的情况出现在大多数运算符中
+    printf("auto_rule7=============================\n");
+
+    auto s = true ? 2 : 2.0;
+    std::cout << type_name_v<decltype(s)> << "\n";
+
     // 2. decltype 推导规则
     // 1）默认保留所有cv和引用属性（顶层和底层都保留），同时不进行函数和数组的衰退
     printf("decltype_rule1=============================\n");
@@ -102,7 +110,7 @@ int main(void) {
     std::cout << type_name_v<decltype(j)> << "\n";
     std::cout << type_name_v<decltype(array)> << "\n";
 
-    // 2)表达式如果是左值，则为T&，右值为T（纯右值）或者T&&（将亡值）    
+    // 2)表达式如果是左值，则为T&，右值为T（纯右值）或者T&&（将亡值）
     printf("decltype_rule2=============================\n");
     std::cout << type_name_v<decltype((i))> << "\n";
     std::cout << type_name_v<decltype((i1))> << "\n";
@@ -112,7 +120,6 @@ int main(void) {
     std::cout << type_name_v<decltype((10))> << "\n";
     std::cout << type_name_v<decltype((std::move(i)))> << "\n";
 
-    
     printf("decltype_auto_rule=============================\n");
     // 3. decltype(auto) 用法和auto相同，推导使用decltype
     // 1) decltype(auto)可以作为非类型模版参数的占位符，推导规则一致
@@ -122,7 +129,6 @@ int main(void) {
     f<(x)>();
     f<(y)>();
 
-    
     printf("other_rule=============================\n");
     // 4. 其他细节
 
@@ -130,12 +136,10 @@ int main(void) {
     // 非静态变量使用static const或者static inline
 
     // 2) 关于decltype成员变量的cv问题
-    const A * a = new A;
+    const A *a = new A;
     std::cout << type_name_v<decltype(a)> << "\n";
     std::cout << type_name_v<decltype(a->x)> << "\n";
-    std::cout << type_name_v<decltype((a->x))> << "\n";    
-
+    std::cout << type_name_v<decltype((a->x))> << "\n";
 
     return 0;
 }
-
