@@ -11,5 +11,6 @@ cpp11~cpp20的一些新特性介绍与学习
 6. [lambda函数](./06lambda/main.cpp)
 7. [初始化拓展](./07init_extend/main.cpp)
 8. [构造函数拓展](./08ctor_extend/main.cpp)
+9. [强枚举类型](./09enum_extend/main.cpp)
 
 > 更新中，待续...
