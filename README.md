@@ -13,6 +13,6 @@ cpp11~cpp20的一些新特性介绍与学习
 8. [构造函数拓展](./08ctor_extend/main.cpp)
 9. [强枚举类型](./09enum_extend/main.cpp)
 10. [聚合类型拓展](./10aggregate_extend/main.cpp)
-
+11. [新的继承关键字](./11new_derived_keywords/main.cpp)
 
 > 更新中，待续...
