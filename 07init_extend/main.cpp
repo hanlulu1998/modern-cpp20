@@ -1,3 +1,4 @@
+#include <cstdio>
 #include <initializer_list>
 #include <iostream>
 #include <map>
@@ -89,7 +90,28 @@ int main(void) {
     int a[5]{0};
 
     // 7. 自定义使用初始化列表
-    C c{"hello","world","!!!"};
-    
+    C c{"hello", "world", "!!!"};
+
+    // 8. c++现在支持在if和switch中初始化
+    // 变量的作用域是从当前开始当if结束
+    if (int a = 5; a < 5) {
+        printf("%d < 5\n", a);
+    } else if (int b = 10; a > 5) {
+        printf("%d > 5\n", a);
+        printf("b is %d\n", b);
+    } else {
+        printf("%d = 5\n", a);
+        printf("b is %d\n", b);
+    }
+
+    switch (int c = 5; c) {
+    case 5:
+        printf("%d = 5\n", c);
+        break;
+    default:
+        printf("%d != 5\n", c);
+        break;
+    }
+
     return 0;
 }
