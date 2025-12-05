@@ -16,6 +16,7 @@ cpp11~cpp20的一些新特性介绍与学习
 11. [新的继承关键字](./11new_derived_keywords/main.cpp)
 12. [范围for](./12range_for/main.cpp)
 13. [结构化绑定](./13structured_binding/main.cpp)
-
+14. [noexcept关键字](./14noexcept_keyword/main.cpp)
+15. [三向比较符](./15spaceship_operator/main.cpp)
 
 > 更新中，待续...
