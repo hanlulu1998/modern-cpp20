@@ -23,5 +23,9 @@ cpp11~cpp20的一些新特性介绍与学习
 18. [新的属性和宏](./18new_attribute_macro/main.cpp)
 19. [一些重要优化](./19some_important_optimize/main.cpp)
 20. [模块](./20module/main.cpp)
+21. [模板的一些优化](./21template_optimize/main.cpp)
+22. [可变模板参数](./22var_param_template/main.cpp)
+23. [模版推导](./23template_derivation/main.cpp)
+
 
 > 更新中，待续...
