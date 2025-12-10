@@ -26,6 +26,6 @@ cpp11~cpp20的一些新特性介绍与学习
 21. [模板的一些优化](./21template_optimize/main.cpp)
 22. [可变模板参数](./22var_param_template/main.cpp)
 23. [模版推导](./23template_derivation/main.cpp)
-
+24. [概念和约束](./24concept_requires/main.cpp)
 
 > 更新中，待续...
