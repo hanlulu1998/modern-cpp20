@@ -27,5 +27,11 @@ cpp11~cpp20的一些新特性介绍与学习
 22. [可变模板参数](./22var_param_template/main.cpp)
 23. [模版推导](./23template_derivation/main.cpp)
 24. [概念和约束](./24concept_requires/main.cpp)
+25. [STL的新功能](./25new_stl_func/main.cpp)
+26. [range库](./26range/main.cpp)
+27. [智能指针](./27smart_ptr/main.cpp)
+28. [多线程]()
+
+
 
 > 更新中，待续...
