@@ -12,18 +12,21 @@ static int B_STATIC = 10;
 // inline const时，inline会覆盖const，inline更强
 inline const int B_INLINE_CONST = 10;
 
+// c++17之后constexpr默认内联
+constexpr void constexpr_func() {
+
+};
+
+constexpr int B_CONSTEXPR = 10;
 
 // 4. 定义在头文件中的函数，保证外部链接ODR
-inline void inline_func(){
-    printf("b.hpp:B_INLINE is %d\n",B_INLINE);
+inline void inline_func() {
+    printf("b.hpp:B_INLINE is %d\n", B_INLINE);
     printf("b.hpp:B_CONST is %d\n", B_CONST);
     printf("b.hpp:B_STATIC is %d\n", B_STATIC);
     printf("b.hpp:B_INLINE_CONST is %d\n", B_INLINE_CONST);
 }
 
-
-
-
 // 4. 定义在头文件的模板变量
-template<typename T>
+template <typename T>
 inline T value = T{};

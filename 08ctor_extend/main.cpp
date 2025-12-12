@@ -147,6 +147,15 @@ int main(void) {
     // 因为按照平凡定义，所有操作都可以使用基础的内存操作，不会调用用户代码
     std::cout << std::is_trivial_v<S2> << "\n";
 
+    // 标准布局类型
+    // 1）所有非静态成员具有相同的访问控制（全部 public 或全部 private 等）
+    // 2）没有虚函数、没有虚基类
+    // 3）所有非静态数据成员都是 standard-layout
+    // 4）成员必须从当前类自身声明的第一个成员开始，而不能让基类的成员排在最前面
+    std::cout << std::is_standard_layout_v<S1> << "\n";
+    std::cout << std::is_standard_layout_v<S2> << "\n";
+    // 原来的POD = 平凡+标准布局
+
     try {
         X x;
     } catch (int e) {
@@ -164,7 +173,6 @@ int main(void) {
     // 4）不会继承类的默认构造和复制构造
     d3 = 3.0f;
     // 5）继承构造不会继承默认参数
-    
 
     return 0;
 }
